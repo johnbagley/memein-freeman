@@ -1,10 +1,12 @@
 class TeamsController < ApplicationController
   def new
-    @team = Team.new
+    @team = current_user.team.new
   end
 
   def show
-    @team = Team.find(params[:id])
+    @team = current_user.teams.find(params[:id])
+    @player = @team.players.read_file
+    @players = Player.all
   end
 
   def create

@@ -1,3 +1,26 @@
 <h2><%= current_user.email %></h2>
 <p>
 <h3><%= @team.name %></h3>
+
+<%# <% @my_players.each do |my_player| %>
+<%#   <%= my_player.name %>
+<%# <% end %>
+
+<p>
+<% @players.each do |player| %>
+  <ul>
+    <li>
+    <%= player.name %>
+    <%= player.passing_yards %>
+    <%= player.passing_touchdowns %>
+    <%= player.interceptions %>
+    <%= player.rushing_yards %>
+    <%= player.rushing_touchdowns %>
+    <%= player.receptions %>
+    <%= player.receiving_yards %>
+    <%= player.receiving_touchdowns %>
+    <%= player.points %>
+    <%= button_to "Select Player", @team, method: :post %>
+    </li>
+  </ul>
+<% end %>
