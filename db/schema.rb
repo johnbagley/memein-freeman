@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807154035) do
+ActiveRecord::Schema.define(version: 20140807180328) do
 
-  create_table "players", force: true do |t|
+  create_table "draftees", force: true do |t|
     t.integer  "rank",                 default: 0
     t.string   "name"
     t.integer  "completions",          default: 0

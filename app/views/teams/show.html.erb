@@ -7,20 +7,20 @@
 <%# <% end %>
 
 <p>
-<% @players.each do |player| %>
+<% @draftees.each do |draftee| %>
   <ul>
     <li>
-    <%= player.name %>
-    <%= player.passing_yards %>
-    <%= player.passing_touchdowns %>
-    <%= player.interceptions %>
-    <%= player.rushing_yards %>
-    <%= player.rushing_touchdowns %>
-    <%= player.receptions %>
-    <%= player.receiving_yards %>
-    <%= player.receiving_touchdowns %>
-    <%= player.points %>
-    <%= button_to "Select Player", @team, method: :post %>
+    <%= draftee.name %>
+    <%= draftee.passing_yards %>
+    <%= draftee.passing_touchdowns %>
+    <%= draftee.interceptions %>
+    <%= draftee.rushing_yards %>
+    <%= draftee.rushing_touchdowns %>
+    <%= draftee.receptions %>
+    <%= draftee.receiving_yards %>
+    <%= draftee.receiving_touchdowns %>
+    <%= draftee.points %>
+    <%= button_to "Select Draftee", team_players_path(@team), method: :post %>
     </li>
   </ul>
 <% end %>
