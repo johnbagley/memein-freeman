@@ -31,6 +31,6 @@ class MyPlayersController < ApplicationController
       :receiving_yards,
       :receiving_touchdowns,
       :points
-    )
+    ).merge(user_id: current_user.id)
   end
 end
