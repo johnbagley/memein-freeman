@@ -2,25 +2,25 @@
 <p>
 <h3><%= @team.name %></h3>
 
-<%# <% @my_players.each do |my_player| %>
-<%#   <%= my_player.name %>
-<%# <% end %>
+<% @my_players.each do |player| %>
+  <%= player.name %>
+<% end %>
 
 <p>
-<% @draftees.each do |draftee| %>
+<% @players.each do |player| %>
   <ul>
     <li>
-    <%= draftee.name %>
-    <%= draftee.passing_yards %>
-    <%= draftee.passing_touchdowns %>
-    <%= draftee.interceptions %>
-    <%= draftee.rushing_yards %>
-    <%= draftee.rushing_touchdowns %>
-    <%= draftee.receptions %>
-    <%= draftee.receiving_yards %>
-    <%= draftee.receiving_touchdowns %>
-    <%= draftee.points %>
-    <%= button_to "Select Draftee", team_players_path(@team), method: :post %>
+    <%= player.name %>
+    <%= player.passing_yards %>
+    <%= player.passing_touchdowns %>
+    <%= player.interceptions %>
+    <%= player.rushing_yards %>
+    <%= player.rushing_touchdowns %>
+    <%= player.receptions %>
+    <%= player.receiving_yards %>
+    <%= player.receiving_touchdowns %>
+    <%= player.points %>
+    <%= link_to "Select player", team_my_players_path(@team), method: :post %>
     </li>
   </ul>
 <% end %>

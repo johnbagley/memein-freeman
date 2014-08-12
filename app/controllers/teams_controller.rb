@@ -5,12 +5,9 @@ class TeamsController < ApplicationController
 
   def show
     @team = current_user.teams.find(params[:id])
-    @player = @team.players.read_file
+    @my_players = @team.my_players
+    @player = Player.read_file
     @players = Player.all
-    @draftee = Draftee.read_file
-    # @player = @team.players.read_file
-    # @players = Player.all
-    @draftees = Draftee.all
   end
 
   def create

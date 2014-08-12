@@ -11,9 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807180328) do
+ActiveRecord::Schema.define(version: 20140808182220) do
 
-  create_table "draftees", force: true do |t|
+  create_table "my_players", force: true do |t|
+    t.integer  "team_id"
+    t.integer  "rank",                 default: 0
+    t.string   "name"
+    t.integer  "completions",          default: 0
+    t.integer  "passing_yards",        default: 0
+    t.integer  "passing_touchdowns",   default: 0
+    t.integer  "interceptions",        default: 0
+    t.integer  "rushes",               default: 0
+    t.integer  "rushing_yards",        default: 0
+    t.integer  "rushing_touchdowns",   default: 0
+    t.integer  "receptions",           default: 0
+    t.integer  "receiving_yards",      default: 0
+    t.integer  "receiving_touchdowns", default: 0
+    t.integer  "points",               default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "my_players", ["team_id"], name: "index_my_players_on_team_id"
+
+  create_table "players", force: true do |t|
     t.integer  "rank",                 default: 0
     t.string   "name"
     t.integer  "completions",          default: 0
